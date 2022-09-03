@@ -19,6 +19,7 @@ const Footer = () => {
     const [location, setLocation] = useState([]);
     const [phoneNumber, setPhoneNumber] = useState([]);
     const [mail, setMail] = useState([]);
+    const [isEmpty, setIsEmpty] = useState([]);
 
     useEffect(() => {
         const queries = [
@@ -38,6 +39,20 @@ const Footer = () => {
     };
 
     const handleSubmit = () => {
+        if (!name || !email || !message) {
+            setIsEmpty([
+                {
+                    name: !name ? true : false,
+                    email: !email ? true : false,
+                    message: !message ? true : false,
+                },
+            ]);
+
+            return setTimeout(() => {
+                setIsEmpty(false);
+            }, 3000);
+        }
+
         setLoading(true);
 
         const document = [
@@ -107,6 +122,11 @@ const Footer = () => {
                             placeholder="Ваше имя"
                             value={name}
                             onChange={handleInputChange}
+                            style={
+                                isEmpty[0]?.name
+                                    ? { border: "1px solid red" }
+                                    : {}
+                            }
                         />
                     </div>
 
@@ -118,6 +138,11 @@ const Footer = () => {
                             placeholder="Ваша почта"
                             value={email}
                             onChange={handleInputChange}
+                            style={
+                                isEmpty[0]?.email
+                                    ? { border: "1px solid red" }
+                                    : {}
+                            }
                         />
                     </div>
 
@@ -128,6 +153,11 @@ const Footer = () => {
                             value={message}
                             name="message"
                             onChange={handleInputChange}
+                            style={
+                                isEmpty[0]?.message
+                                    ? { border: "1px solid red" }
+                                    : {}
+                            }
                         />
                     </div>
 
@@ -136,7 +166,7 @@ const Footer = () => {
                         type="button"
                         onClick={handleSubmit}
                     >
-                        {loading ? "Отправляю..." : "Отправить сообщение"}
+                        {loading ? "Отправляю" : "Отправить сообщение"}
                     </button>
                 </div>
             ) : (
