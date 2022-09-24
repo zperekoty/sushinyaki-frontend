@@ -29,12 +29,12 @@ const Header = () => {
                         <span>👋</span>
                         <div style={{ marginLeft: 20 }}>
                             <p className="p-text">Добро пожаловать!</p>
-                            <h1 className="head-text">SUSHINYAKI</h1>
+                            <h1 className="head-text">Kalina</h1>
                         </div>
                     </div>
 
                     <div className="tag-cmp app__flex">
-                        <p className="p-text">Кафе</p>
+                        <p className="p-text">Пиццерия Суши-Бар</p>
                         <p className="p-text">Каневская</p>
                     </div>
                 </div>

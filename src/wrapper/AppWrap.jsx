@@ -1,4 +1,5 @@
 import React from "react";
+
 import { NavigationDots, SocialMedia } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
@@ -11,7 +12,7 @@ const AppWrap = (Component, idName, classNames) =>
                     <Component />
 
                     <div className="copyright">
-                        <p className="p-text">&copy;2022 Sushinyaki</p>
+                        <p className="p-text">&copy;2022 Kalina</p>
 
                         <a
                             className="copyright__link"
