@@ -1,7 +1,7 @@
-# Kalina website [frontend]
+## Kalina website `frontend`
 
-Kalina website [frontend] created with vite + react + sanity, [backend] created with sanity
+Kalina website `frontend` created with vite + react + sanity
 
-# Link to project
+`backend` created with sanity
 
-https://kalina.netlify.app
+## [Link to project](https://kalina-kan.vercel.app)
